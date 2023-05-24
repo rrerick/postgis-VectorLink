@@ -1,0 +1,7 @@
+{
+    "tables":[
+        "esquema.table",
+        "esquema.table2",
+        "esquema.table3"
+    ]
+}
