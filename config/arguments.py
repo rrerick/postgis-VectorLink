@@ -34,8 +34,24 @@ def argumentParser(args):
     hlp = 'Caminho do Arquivo com o JSON para realização de Tarefas'
     parser.add_argument('-f', '--file', type=str, help=hlp)
 
+    hlp = 'Função desejada "Export" - para retornar arquivos .GPKG \
+        ou "Import" - para adicionar no banco arquivos .GPKG'
+    parser.add_argument('-F', '--function', type=str, help=hlp, choices=['Export','Import'])
+
+    hlp = 'Nome da tabela que será criado no banco <esquema>.<tabela>'
+    parser.add_argument('-n', '--new', type=str, help=hlp)
+
+
+    hlp = 'Formato de Exportação'
+    parser.add_argument('-y', '--drive', type=str, help=hlp,choices=['GPKG','GEOJSON'])
+
+    hlp = 'Sistema de Referencia'
+    parser.add_argument('-t_srs', type=str, help=hlp)
+
+
     if args.__len__() == 0:
         raise err.NoParameters
     else:
         args = parser.parse_args()
         return args
+

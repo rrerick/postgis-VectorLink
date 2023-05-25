@@ -9,7 +9,7 @@ class Table(object):
     Args:
 
     """
-    def __init__(self, host, port, database, user,password,tablename) -> None:
+    def __init__(self, host, port, database, user,password,tablename,path=None) -> None:
         """Create a table object
 
         Args:
@@ -19,6 +19,7 @@ class Table(object):
             user (string): _description_
             password (string): _description_
             tablename(string): _description_
+            path(string): _description_
         """
 
         self.dbhost=host
@@ -27,13 +28,10 @@ class Table(object):
         self.username=user
         self.password=password
         self.tablename=tablename
+        self.path=path
 
     def __str__(self):
-        return f'Table {self.tablename} on IP: {self.dbhost}:{self.dbport} in database name: {self.dbname} and table name: {self.tablename}'
+        return f'Table {self.tablename} on IP: {self.dbhost}:{self.dbport} in database name: {self.dbname} and table name: {self.tablename} on path: {self.path}'
     def __connect__(self):
-        return f'"dbname={self.dbname} host={self.dbhost} port={self.dbport} user={self.username} password={self.password}"'
+        return f'dbname={self.dbname} host={self.dbhost} port={self.dbport} user={self.username} password={self.password}'
 
-def importTB():
-    """Function to import table
-    """
-    pass
