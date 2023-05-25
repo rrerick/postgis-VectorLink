@@ -1,4 +1,9 @@
 {
+    "path":[
+        "table1/path",
+        "table2/path",
+        "table3/path"
+    ],
     "tables":[
         "esquema.table",
         "esquema.table2",
